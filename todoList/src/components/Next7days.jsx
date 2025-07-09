@@ -135,13 +135,13 @@ function Next7Days({ setIsOpen, isOpen, setSelectedItems, selectedItems }) {
           />
         </div>
 
-        <div className="tasks px-2 py-9 flex flex-col gap-4">
+        <div className="tasks px-2 py-9 flex flex-col gap-4 ">
           {toDoItems.map((item, index) => {
             console.log(index, "These are the index");
 
             return (
               <div className="flex justify-baseline w-[full]">
-                <div className="w-full">
+                <div className="w-full bg-red-600">
                   <li
                     className={`list-none px-4 flex py-2 rounded-lg w-full gap-4 items-center cursor-pointer
     ${isClicked ? "bg-gray-300" : "bg-gray-200"}
