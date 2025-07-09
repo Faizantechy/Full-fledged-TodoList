@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+.ri-checkbox-fill{
+
+    font-size: 25px;
+    color: green;
+}
+
+
+.filled-icon{
+
+        color: rgb(110, 110, 224) !important;
+        font-weight: 800;
+        font-size: 1.5rem;
+        border-radius: 10px;
+
+
+
+}
