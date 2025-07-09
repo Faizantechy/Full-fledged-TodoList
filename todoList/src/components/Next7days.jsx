@@ -13,7 +13,7 @@ function Next7Days({ setIsOpen, isOpen, setSelectedItems, selectedItems }) {
   const [isClicked, setIsClicked] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [updatedValue, setUpdatedValue] = useState({ value: "" });
-  const [editingid, seteditingid] = useState(null)
+  const [editingid, seteditingid] = useState(null);
   const dispatch = useDispatch();
 
   const [index, setindex] = useState();
@@ -55,23 +55,23 @@ function Next7Days({ setIsOpen, isOpen, setSelectedItems, selectedItems }) {
     getTodos();
   }, []);
 
-   const deleteTodo = async (id) => {
-     try {
-       await databases.deleteDocument(
-         "685514b200271d2c0666",
-         "685514cd0037e1e10a28",
-         id
-       );
-       console.log("Todo Is Deleted!");
-       const updatedTodos = await databases.listDocuments(
-         "685514b200271d2c0666",
-         "685514cd0037e1e10a28"
-       );
-       setTodoItems(updatedTodos.documents);
-     } catch (error) {
-       console.log(error, "Error Deleting'");
-     }
-   };
+  const deleteTodo = async (id) => {
+    try {
+      await databases.deleteDocument(
+        "685514b200271d2c0666",
+        "685514cd0037e1e10a28",
+        id
+      );
+      console.log("Todo Is Deleted!");
+      const updatedTodos = await databases.listDocuments(
+        "685514b200271d2c0666",
+        "685514cd0037e1e10a28"
+      );
+      setTodoItems(updatedTodos.documents);
+    } catch (error) {
+      console.log(error, "Error Deleting'");
+    }
+  };
 
   const updateTodo = async (id) => {
     console.log("Task is Updated!");
@@ -102,7 +102,11 @@ function Next7Days({ setIsOpen, isOpen, setSelectedItems, selectedItems }) {
 
   return (
     <div className="">
-      <div className={`${isOpen?"w-[800px]":"w-[1000px]"} h-screen border-1 z-[100] border-black px-5 py-5`}>
+      <div
+        className={`${
+          isOpen ? "w-[800px]" : "w-[1000px]"
+        } h-screen border-1 z-[100] border-black px-5 py-5`}
+      >
         <div className="icon-text flex gap-4 text-2xl font-semibold items-center ">
           <i
             className="ri-menu-unfold-line px-1 py-1 hover:bg-gray-200"
@@ -222,8 +226,8 @@ function Next7Days({ setIsOpen, isOpen, setSelectedItems, selectedItems }) {
                   className="ri-edit-line text-2xl cursor-pointer"
                   onClick={() => {
                     setShowForm(true);
-                    seteditingid(item.$id)
-              
+                    seteditingid(item.$id);
+
                     updateTodo(editingid);
                   }}
                 ></i>
@@ -249,10 +253,10 @@ function Next7Days({ setIsOpen, isOpen, setSelectedItems, selectedItems }) {
                 <button
                   type="submit"
                   className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
-               onClick={()=>{
-
-                updateTodo(editingid)
-               }} >
+                  onClick={() => {
+                    updateTodo(editingid);
+                  }}
+                >
                   Update Task
                 </button>
               </div>

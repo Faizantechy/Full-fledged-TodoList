@@ -2,8 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function NavBar({ isOpen, setIsOpen, profileIcon }) {
-
-  console.log(profileIcon,"NAVBAR PROFILE ICON")
+  console.log(profileIcon, "NAVBAR PROFILE ICON");
   const links1 = [
     { icon: "ri-checkbox-line" },
     { icon: "ri-timeline-view" },
@@ -18,7 +17,11 @@ function NavBar({ isOpen, setIsOpen, profileIcon }) {
 
   const links3 = [
     { label: "Today", icon: "ri-sun-line", route: "today" },
-    { label: "Next 7 Days", icon: "ri-calendar-2-line", route: "/layout/next7days" },
+    {
+      label: "Next 7 Days",
+      icon: "ri-calendar-2-line",
+      route: "/layout/next7days",
+    },
     { label: "Inbox", icon: "ri-inbox-line", route: "/inbox" },
   ];
 
@@ -40,7 +43,7 @@ function NavBar({ isOpen, setIsOpen, profileIcon }) {
       >
         <div className="links-1 space-y-4 py-4  flex-col  ">
           <div className="profile-icon w-[32px] h-[30px] rounded-[5px] bg-green-800  flex justify-center items-center font-semibold text-gray-200">
-            <h2>{profileIcon?profileIcon:"F"}</h2>
+            <h2>{profileIcon ? profileIcon : "F"}</h2>
           </div>
 
           {links1.map((link) => {

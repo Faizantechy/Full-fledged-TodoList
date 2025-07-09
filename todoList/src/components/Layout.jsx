@@ -4,9 +4,15 @@ import { Outlet } from "react-router-dom";
 import ToDos from "./ToDos";
 import Today from "./Today";
 
-function Layout({ setIsOpen, isOpen, selectedItems, setSelectedItems,profileIcon, setProfileIcon }) {
-
-  console.log(profileIcon,"Layooooooooout")
+function Layout({
+  setIsOpen,
+  isOpen,
+  selectedItems,
+  setSelectedItems,
+  profileIcon,
+  setProfileIcon,
+}) {
+  console.log(profileIcon, "Layooooooooout");
   return (
     <div className="w-full h-screen flex">
       <NavBar setIsOpen={setIsOpen} isOpen={isOpen} profileIcon={profileIcon} />
