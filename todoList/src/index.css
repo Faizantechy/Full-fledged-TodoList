@@ -17,3 +17,8 @@
 
 
 }
+
+.tasks::-webkit-scrollbar{
+
+    display: none;
+}
